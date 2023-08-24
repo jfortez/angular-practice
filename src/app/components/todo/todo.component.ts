@@ -23,11 +23,6 @@ export class TodoComponent {
         description: 'Learn React',
         completed: true,
       },
-      {
-        id: 3,
-        title: 'Learn Vue',
-        completed: false,
-      },
     ];
   }
 
@@ -39,6 +34,7 @@ export class TodoComponent {
     return {
       id: this.todos.length + 1,
       title: this.generateRandomStr(),
+      description: this.generateRandomStr(),
       completed: Math.random() > 0.5,
     };
   }
@@ -51,7 +47,12 @@ export class TodoComponent {
     this.todos = this.todos.filter((todo) => todo.id !== id);
   }
 
+  removeAllTodos() {
+    this.todos = [];
+  }
+
   setComplete({ id }: Todo) {
+    console.log(id);
     this.todos = this.todos.map((todo) => {
       if (todo.id === id) {
         todo.completed = !todo.completed;
