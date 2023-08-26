@@ -1,4 +1,4 @@
-<div class="flex flex-col justify-center items-center gap-2">
+<div class="flex flex-col justify-center items-center gap-4">
   <h2 class="text-xl text-blue-400 font-bold leading-5 tracking-wider">
     Mission Control
   </h2>
@@ -10,8 +10,14 @@
     Announce mission
   </button>
 
-  <app-astronaut *ngFor="let astronaut of astronauts" [astronaut]="astronaut">
-  </app-astronaut>
+  <div class="flex flex-col justify-start items-center gap-4 w-[100%]">
+    <app-astronaut
+      *ngFor="let astronaut of astronauts"
+      [astronaut]="astronaut"
+      class="w-[100%]"
+    >
+    </app-astronaut>
+  </div>
 
   <h3 class="text-xl text-blue-400 font-bold leading-5 tracking-wider">
     History
