@@ -1,6 +1,7 @@
 import { Component, OnDestroy } from '@angular/core';
 
 @Component({
+  standalone: true,
   selector: 'app-timer',
   templateUrl: './timer.component.html',
   styleUrls: ['./timer.component.css'],

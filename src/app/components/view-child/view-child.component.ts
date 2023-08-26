@@ -2,9 +2,11 @@ import { Component, AfterViewInit, ViewChild } from '@angular/core';
 import { TimerComponent } from '../timer/timer.component';
 
 @Component({
+  standalone: true,
   selector: 'app-view-child',
   templateUrl: './view-child.component.html',
   styleUrls: ['./view-child.component.css'],
+  imports: [TimerComponent],
 })
 export class ViewChildComponent implements AfterViewInit {
   @ViewChild(TimerComponent)

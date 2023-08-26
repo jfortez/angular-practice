@@ -1,11 +1,15 @@
 import { Component } from '@angular/core';
 import { MissionService } from 'src/app/services/mission.service';
+import { AstronautComponent } from '../astronaut/astronaut.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
+  standalone: true,
   selector: 'app-mission-control',
   templateUrl: './mission-control.component.html',
   styleUrls: ['./mission-control.component.css'],
   providers: [MissionService],
+  imports: [AstronautComponent, CommonModule],
 })
 export class MissionControlComponent {
   astronauts = ['Lovell', 'Swigert', 'Haise'];

@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
-
+import { VoterComponent } from '../voter/voter.component';
 @Component({
+  standalone: true,
   selector: 'app-vote-taker',
   templateUrl: './vote-taker.component.html',
   styleUrls: ['./vote-taker.component.css'],
+  imports: [VoterComponent],
 })
 export class VoteTakerComponent {
   agreed = 0;

@@ -1,9 +1,12 @@
+import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
 @Component({
+  standalone: true,
   selector: 'card-component',
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.css'],
+  imports: [CommonModule],
 })
 export class GroupComponentsComponent {
   @Input()

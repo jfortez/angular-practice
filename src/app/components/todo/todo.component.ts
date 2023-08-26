@@ -6,11 +6,14 @@ import {
   Output,
 } from '@angular/core';
 import { Todo } from './todo';
+import { CommonModule } from '@angular/common';
 
 @Component({
+  standalone: true,
   selector: 'app-todo',
   templateUrl: './todo.component.html',
   styleUrls: ['./todo.component.css'],
+  imports: [CommonModule],
 })
 export class TodoComponent implements OnChanges {
   updates = 0;

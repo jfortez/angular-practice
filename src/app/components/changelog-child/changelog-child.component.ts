@@ -1,9 +1,11 @@
-import { Component,Input,OnChanges,SimpleChanges } from '@angular/core';
-
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { CommonModule } from '@angular/common';
 @Component({
+  standalone: true,
   selector: 'app-changelog-child',
   templateUrl: './changelog-child.component.html',
   styleUrls: ['./changelog-child.component.css'],
+  imports: [CommonModule],
 })
 export class ChangelogChildComponent implements OnChanges {
   @Input() major = 0;

@@ -1,0 +1,69 @@
+<div class="flex flex-col gap-5">
+  <app-title name="Samples" />
+  <div
+    class="grid gap-5 sm:grid-cols-1 sm:grid-rows-2 md:grid-cols-2 md:grid-rows-2 lg:grid-cols-3 2xl:grid-cols-4 2xl:grid-rows-3"
+  >
+    <card-component
+      title="Counter"
+      description="Basic Counter Card"
+      [justify]="true"
+    >
+      <app-counter />
+    </card-component>
+    <card-component title="TO-DO" description="Basic To-DO Card">
+      <app-todo
+        [todos]="data"
+        (onAddTodo)="onAddTodo()"
+        (onRemoveTodo)="onRemoveTodo($event)"
+        (onCheck)="onCheck($event)"
+        (onRemoveAllTodos)="onRemoveAll()"
+      />
+    </card-component>
+    <card-component
+      title="Changelog"
+      description="Basic Semantic Version Sample"
+    >
+      <app-changelog-parent />
+    </card-component>
+    <card-component title="Vote" description="Basic Vote Sample">
+      <app-vote-taker />
+    </card-component>
+
+    <card-component title="Timer" description="Basic Local Variable Sample">
+      <div class="flex flex-col justify-center items-center gap-3">
+        <h3 class="text-xl text-sky-400 font-bold leading-5">Timer</h3>
+        <p class="text-white font-medium">{{ timer.seconds }}</p>
+        <div class="flex items-center gap-5">
+          <button
+            type="button"
+            class="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+            (click)="timer.start()"
+          >
+            Start
+          </button>
+          <button
+            type="button"
+            class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+            (click)="timer.stop()"
+          >
+            Stop
+          </button>
+        </div>
+        <app-timer #timer />
+      </div>
+    </card-component>
+
+    <card-component
+      title="View Child"
+      description="ViewChild a alternative of local variable"
+    >
+      <app-view-child />
+    </card-component>
+    <card-component
+      title="Using Services "
+      description="Basic Services Sample using rxjs"
+    >
+      <app-mission-control />
+    </card-component>
+  </div>
+</div>
