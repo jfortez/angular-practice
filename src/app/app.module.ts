@@ -12,6 +12,7 @@ import { ChangelogParentComponent } from './components/changelog-parent/changelo
 import { VoterComponent } from './components/voter/voter.component';
 import { VoteTakerComponent } from './components/vote-taker/vote-taker.component';
 import { TimerComponent } from './components/timer/timer.component';
+import { ViewChildComponent } from './components/view-child/view-child.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { TimerComponent } from './components/timer/timer.component';
     VoterComponent,
     VoteTakerComponent,
     TimerComponent,
+    ViewChildComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],

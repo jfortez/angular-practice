@@ -24,7 +24,7 @@ export class TodoComponent implements OnChanges {
     return Math.random().toString(36).substring(7);
   }
 
-  private genNewTodo() {
+  genNewTodo() {
     return {
       id: this.generateRandomStr(),
       title: this.generateRandomStr(),

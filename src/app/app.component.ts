@@ -1,21 +1,30 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit, ViewChild } from '@angular/core';
 import { Todo } from './components/todo/todo';
+import { TodoComponent } from './components/todo/todo.component';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit {
+  @ViewChild(TodoComponent)
+  private todoComponent!: TodoComponent;
   title = 'counter-app';
   data: Todo[] = [];
 
-  onAddTodo(newItem: Todo) {
-    this.data = [...this.data, newItem];
+  ngAfterViewInit(): void {}
+
+  getTitle() {
+    console.log('rendering...');
+    return this.title;
+  }
+
+  onAddTodo() {
+    this.data = [...this.data, this.todoComponent.genNewTodo()];
   }
 
   onRemoveTodo(item: Todo) {
-    console.log(item);
     this.data = this.data.filter((todo) => todo.id !== item.id);
   }
 
