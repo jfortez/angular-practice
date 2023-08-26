@@ -13,6 +13,8 @@ import { VoterComponent } from './components/voter/voter.component';
 import { VoteTakerComponent } from './components/vote-taker/vote-taker.component';
 import { TimerComponent } from './components/timer/timer.component';
 import { ViewChildComponent } from './components/view-child/view-child.component';
+import { MissionControlComponent } from './components/mission-control/mission-control.component';
+import { AstronautComponent } from './components/astronaut/astronaut.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { ViewChildComponent } from './components/view-child/view-child.component
     VoteTakerComponent,
     TimerComponent,
     ViewChildComponent,
+    MissionControlComponent,
+    AstronautComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],

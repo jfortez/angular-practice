@@ -1,0 +1,16 @@
+<div class="flex justify-between items-center gap-5">
+  <div class="flex gap-1">
+    <span class="text-yellow-300 font-medium"> {{ astronaut }}: </span>
+    <strong class="text-white">{{ mission }}</strong>
+  </div>
+  <div class="flex-auto">
+    <button
+      type="button"
+      class="bg-blue-500 hover:bg-blue-700 text-white font-bold text-sm py-2 px-2 rounded"
+      (click)="confirm()"
+      [disabled]="!announced || confirmed"
+    >
+      Confirm
+    </button>
+  </div>
+</div>
