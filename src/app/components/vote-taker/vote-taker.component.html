@@ -1,0 +1,15 @@
+<h2 class="text-center text-white font-bold flex-wrap uppercase">
+  Should mankind colonize the Universe?
+</h2>
+<h3 class="text-center uppercase text-slate-50 font-light">
+  Agree: {{ agreed }}, Disagree: {{ disagreed }}
+</h3>
+
+<div class="flex flex-col gap-3 pt-2">
+  <app-voter
+    *ngFor="let voter of voters"
+    [name]="voter"
+    (voted)="onVoted($event)"
+  >
+  </app-voter>
+</div>

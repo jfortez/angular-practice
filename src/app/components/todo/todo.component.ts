@@ -1,4 +1,10 @@
-import { Component } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  Output,
+} from '@angular/core';
 import { Todo } from './todo';
 
 @Component({
@@ -6,25 +12,13 @@ import { Todo } from './todo';
   templateUrl: './todo.component.html',
   styleUrls: ['./todo.component.css'],
 })
-export class TodoComponent {
-  todos!: Todo[];
-
-  constructor() {
-    this.todos = [
-      {
-        id: 1,
-        title: 'Learn Angular',
-        description: 'Learn Angular',
-        completed: false,
-      },
-      {
-        id: 2,
-        title: 'Learn React',
-        description: 'Learn React',
-        completed: true,
-      },
-    ];
-  }
+export class TodoComponent implements OnChanges {
+  updates = 0;
+  @Input() todos: Todo[] = [];
+  @Output() onAddTodo = new EventEmitter<Todo>();
+  @Output() onRemoveTodo = new EventEmitter<Todo>();
+  @Output() onRemoveAllTodos = new EventEmitter<void>();
+  @Output() onCheck = new EventEmitter<Todo>();
 
   private generateRandomStr() {
     return Math.random().toString(36).substring(7);
@@ -32,7 +26,7 @@ export class TodoComponent {
 
   private genNewTodo() {
     return {
-      id: this.todos.length + 1,
+      id: this.generateRandomStr(),
       title: this.generateRandomStr(),
       description: this.generateRandomStr(),
       completed: Math.random() > 0.5,
@@ -40,24 +34,22 @@ export class TodoComponent {
   }
 
   addTodo() {
-    this.todos = [...this.todos, this.genNewTodo()];
+    this.onAddTodo.emit(this.genNewTodo());
   }
 
-  removeTodo({ id }: Todo) {
-    this.todos = this.todos.filter((todo) => todo.id !== id);
+  removeTodo(item: Todo) {
+    this.onRemoveTodo.emit(item);
   }
 
   removeAllTodos() {
-    this.todos = [];
+    this.onRemoveAllTodos.emit();
   }
 
-  setComplete({ id }: Todo) {
-    console.log(id);
-    this.todos = this.todos.map((todo) => {
-      if (todo.id === id) {
-        todo.completed = !todo.completed;
-      }
-      return todo;
-    });
+  setComplete(item: Todo) {
+    this.onCheck.emit(item);
+  }
+
+  ngOnChanges() {
+    this.updates++;
   }
 }

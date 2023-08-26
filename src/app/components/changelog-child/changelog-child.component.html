@@ -1,0 +1,7 @@
+<h3 class="text-xl text-cyan-100 font-bold">Version {{ major }}.{{ minor }}</h3>
+<h4 class="text-lg text-blue-100 font-medium">Change log:</h4>
+<ul class="flex flex-col gap-3">
+  <li class="min-h-[30px] text-white" *ngFor="let change of changeLog">
+    {{ change }}
+  </li>
+</ul>
