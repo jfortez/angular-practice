@@ -3,8 +3,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { StoreComponent } from './pages/store/store.component';
 import { SamplesComponent } from './pages/samples/samples.component';
 import { StoreDetailComponent } from './pages/store-detail/store-detail.component';
+import { HomeComponent } from './pages/home/home.component';
 
 const routes: Routes = [
+  { path: '', component: HomeComponent },
   {
     path: 'store',
     component: StoreComponent,
