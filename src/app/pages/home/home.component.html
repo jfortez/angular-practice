@@ -1,8 +1,20 @@
-<div class="flex flex-col gap-4">
+<div class="flex flex-row justify-center items-start gap-32 px-20 py-10">
   <div class="flex flex-col items-center gap-4 text-5xl font-bold">
     <app-random-color-text
       [letter]="letter"
-      *ngFor="let letter of word.toUpperCase().split('')"
+      *ngFor="let letter of 'first'.toUpperCase().split('')"
+    />
+  </div>
+  <div class="flex flex-col items-center gap-4 text-5xl font-bold">
+    <app-random-color-text
+      [letter]="letter"
+      *ngFor="let letter of 'angular'.toUpperCase().split('')"
+    />
+  </div>
+  <div class="flex flex-col items-center gap-4 text-5xl font-bold">
+    <app-random-color-text
+      [letter]="letter"
+      *ngFor="let letter of 'app'.toUpperCase().split('')"
     />
   </div>
 </div>

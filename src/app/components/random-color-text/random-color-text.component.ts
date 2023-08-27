@@ -56,7 +56,7 @@ export class RandomColorTextComponent
   //   '900',
   //   '950',
   // ];
-  color = '#ffffff';
+  color = this.generateRandomColor();
 
   constructor(private cd: ChangeDetectorRef) {}
 
