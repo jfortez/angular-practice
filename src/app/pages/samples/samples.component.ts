@@ -5,8 +5,7 @@ import { Todo } from '../../components/todo/todo';
 import { TodoComponent } from '../../components/todo/todo.component';
 
 import { CounterComponent } from '../../components/counter/counter.component';
-import { GroupComponentsComponent } from '../../components/card/card.component';
-import { FetchDataComponent } from '../../components/fetch-data/fetch-data.component';
+import { CardComponent } from '../../components/card/card.component';
 import { ChangelogChildComponent } from '../../components/changelog-child/changelog-child.component';
 import { ChangelogParentComponent } from '../../components/changelog-parent/changelog-parent.component';
 import { VoterComponent } from '../../components/voter/voter.component';
@@ -24,8 +23,7 @@ import { TitleComponent } from 'src/app/components/title/title.component';
   standalone: true,
   imports: [
     CounterComponent,
-    GroupComponentsComponent,
-    FetchDataComponent,
+    CardComponent,
     ChangelogChildComponent,
     ChangelogParentComponent,
     VoterComponent,

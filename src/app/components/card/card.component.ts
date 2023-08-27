@@ -8,7 +8,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./card.component.css'],
   imports: [CommonModule],
 })
-export class GroupComponentsComponent {
+export class CardComponent {
   @Input()
   get title(): string {
     return this._title;

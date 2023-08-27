@@ -1,0 +1,10 @@
+<div class="flex flex-col gap-5" *ngIf="product">
+  <app-title [name]="product.title"></app-title>
+  <img
+    [src]="product.image"
+    [alt]="product.title"
+    class="w-1/2 mx-auto h-52 object-contain"
+    loading="lazy"
+  />
+  <p class="text-white text-center">{{ product.description }}</p>
+</div>
