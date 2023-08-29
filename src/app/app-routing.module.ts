@@ -4,20 +4,36 @@ import { StoreComponent } from './pages/store/store.component';
 import { SamplesComponent } from './pages/samples/samples.component';
 import { StoreDetailComponent } from './pages/store-detail/store-detail.component';
 import { HomeComponent } from './pages/home/home.component';
+import { MainLayoutComponent } from './layout/main-layout/main-layout.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
   {
-    path: 'store',
-    component: StoreComponent,
-  },
-  {
-    path: 'store/:id',
-    component: StoreDetailComponent,
-  },
-  {
-    path: 'samples',
-    component: SamplesComponent,
+    path: '',
+    component: MainLayoutComponent,
+    children: [
+      {
+        path: '',
+        component: HomeComponent,
+      },
+      {
+        path: 'samples',
+        // component: SamplesComponent,
+        loadComponent: () =>
+          import('./pages/samples/samples.component').then(
+            (m) => m.SamplesComponent
+          ),
+      },
+      {
+        path: 'store',
+        // component: StoreComponent,
+        loadChildren: () =>
+          import('./pages/store/store.module').then((m) => m.StoreModule),
+      },
+      // {
+      //   path: 'store/:id',
+      //   component: StoreDetailComponent,
+      // },
+    ],
   },
 ];
 
