@@ -8,22 +8,13 @@
         First Angular App
       </a>
       <ul class="flex flex-row justify-between items-center text-white gap-5">
-        <li>
+        <li *ngFor="let route of routes">
           <a
-            routerLink="/samples"
+            [routerLink]="[route.path]"
             routerLinkActive="active"
             type="button"
-            class="py-1 px-2 text-white hover:text-indigo-100 bg-blue-400 hover:bg-sky-600 hover:cursor-pointer rounded transition duration-300 ease-in-out min-w-[80px] text-center"
-            >Samples</a
-          >
-        </li>
-        <li>
-          <a
-            routerLink="/store"
-            routerLinkActive="active"
-            type="button"
-            class="py-1 px-2 text-white hover:text-indigo-100 bg-blue-400 hover:bg-sky-600 hover:cursor-pointer rounded transition duration-300 ease-in-out min-w-[80px] text-center"
-            >Store</a
+            class="py-1 px-2 text-white hover:text-indigo-100 bg-blue-400 hover:bg-sky-600 hover:cursor-pointer rounded transition duration-300 ease-in-out min-w-[80px] text-center inline-flex justify-center items-center active:bg-sky-700"
+            >{{ route.name }}</a
           >
         </li>
       </ul>
